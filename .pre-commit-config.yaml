@@ -1,0 +1,11 @@
+===============================================================================
+Using config:
+===============================================================================
+repos:
+-   repo: https://github.com/pcnuness/git-hooks-central.git
+    rev: c545d891bd376623100e772c373868f7e4ca5923
+    hooks:
+    -   id: audit-trail
+    -   id: branch-ahead-check
+    -   id: deps-audit-fast
+    -   id: sast-semantic-fast
