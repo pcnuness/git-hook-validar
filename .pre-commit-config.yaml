@@ -1,8 +1,0 @@
-repos:
--   repo: https://github.com/pcnuness/git-hooks-central.git
-    rev: main
-    hooks:
-    -   id: audit-trail
-    -   id: branch-ahead-check
-    -   id: deps-audit-fast
-    -   id: sast-semantic-fast
