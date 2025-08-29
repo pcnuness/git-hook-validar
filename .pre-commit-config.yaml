@@ -15,9 +15,25 @@ repos:
       - id: detect-private-key
         stages: [pre-push]
 
+  # Hooks específicos para Node.js (opcional)
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.34.0
+    hooks:
+      - id: eslint
+        additional_dependencies: ['eslint@9.9.0']
+        files: \.(js|jsx|ts|tsx)$
+        stages: [pre-push]
+        args: [--fix]
+  
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.28.0
+    hooks:
+      - id: gitleaks
+        stages: [pre-push]
+        
   # Catálogo central de hooks de segurança (SEMPRE usar tag específica)
   - repo: https://github.com/pcnuness/git-hooks-central.git
-    rev: v1.1.0
+    rev: v1.2.0
     hooks:
       - id: security-pre-push-hook
         stages: [pre-push]
@@ -35,22 +51,6 @@ repos:
       - id: audit-trail
         stages: [pre-push]
         pass_filenames: false
-
-  # Hooks específicos para Node.js (opcional)
-  - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v9.34.0
-    hooks:
-      - id: eslint
-        additional_dependencies: ['eslint@9.9.0']
-        files: \.(js|jsx|ts|tsx)$
-        stages: [pre-push]
-        args: [--fix]
-  
-  - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.28.0
-    hooks:
-      - id: gitleaks
-        stages: [pre-push]
         
 # Configurações de timeout (garantir <300s total)
 # Nota: Os timeouts são configurados individualmente nos hooks acima

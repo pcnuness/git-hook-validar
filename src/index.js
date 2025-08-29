@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 // VULNERABILIDADE: Hardcoded secrets
-const API_SECRET = 'sk-1234567890abcdef';
+const API_KEY = 'sk-1234567890abcdef1234567890abcdef';
 const DB_PASSWORD = 'admin123';
 const JWT_SECRET = 'my-super-secret-jwt-key';
 
