@@ -5,7 +5,7 @@ repos:
         
   # Catálogo central de hooks de segurança (SEMPRE usar tag específica)
   - repo: https://github.com/pcnuness/git-hooks-central.git
-    rev: v1.0.6
+    rev: v1.0.7
     hooks:
       - id: secrets-detection-gitlab
         stages: [pre-push]
