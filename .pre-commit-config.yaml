@@ -5,14 +5,19 @@ repos:
         
   # Catálogo central de hooks de segurança (SEMPRE usar tag específica)
   - repo: https://github.com/pcnuness/git-hooks-central.git
-    rev: latest
+    rev: v1
     hooks:
-      - id: secrets-detection-gcompany-bash
+      - id: secrets-detection-gitlab-bash
         stages: [pre-push]
         always_run: true
         pass_filenames: false
         
       - id: secrets-detection-company-python
+        stages: [pre-push]
+        always_run: true
+        pass_filenames: false
+        
+      - id: gitleaks-docker
         stages: [pre-push]
         always_run: true
         pass_filenames: false
