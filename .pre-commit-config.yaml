@@ -3,10 +3,11 @@
 
 repos:
         
--   repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.2 # Use a versão mais recente
+  # Catálogo central de hooks de segurança (SEMPRE usar tag específica)
+  - repo: https://github.com/pcnuness/git-hooks-central.git
+    rev: v1.0.2
     hooks:
-      - id: gitleaks
+      - id: secrets-detection-gitlab
         stages: [pre-push]
         always_run: true
         pass_filenames: false
