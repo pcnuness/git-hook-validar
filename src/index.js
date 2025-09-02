@@ -10,6 +10,13 @@ const API_KEY = 'sk-1234567890abcdef1234567890abcdef';
 const DB_PASSWORD = 'admin123';
 const JWT_SECRET = 'AKIAQ3EGRIVCO7QPIKPI';
 
+const FAKE_PRIVATE_KEY = `
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEA0RzX/3xJCTtM8H3+wNolbS86A7jTupyte3yqEY0BqDXLdWIc
+... (coloque qualquer conteúdo aqui)
+-----END RSA PRIVATE KEY-----
+`;
+
 // VULNERABILIDADE: SQL Injection
 app.get('/users/:id', (req, res) => {
   const userId = req.params.id;
