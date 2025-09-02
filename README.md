@@ -1,3 +1,3 @@
 # git-hook-validar
 
-Hook simular Develop
+Hook simular Develop Node
