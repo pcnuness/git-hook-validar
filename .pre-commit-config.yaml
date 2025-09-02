@@ -3,14 +3,10 @@
 
 repos:
         
-  # Catálogo central de hooks de segurança (SEMPRE usar tag específica)
-  - repo: https://github.com/pcnuness/git-hooks-central.git
-    rev: v1.0.2
+-   repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2 # Use a versão mais recente
     hooks:
-      - id: secrets-detection-gitlab
+      - id: gitleaks
         stages: [pre-push]
         always_run: true
         pass_filenames: false
-        
-# Configurações de timeout (garantir <300s total)
-# Nota: Os timeouts são configurados individualmente nos hooks acima
